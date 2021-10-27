@@ -46,7 +46,36 @@ Ngoài ra các bạn có thể vừa chuyển qua một branch mới và tiện 
 $ git checkout -b <your_new_branch_name>
 <a name="How"></a>
 ## II.𝐌Ứ𝐂 ĐỘ 𝐓𝐑𝐔𝐍𝐆 𝐁Ì𝐍𝐇
-
+- Sau các lệnh GIT cơ bản thường xuyên được sử dụng, chúng ta sẽ tìm hiểu các lệnh ở mức độ trung bình, cường độ sử dụng ích hơn.
+- 𝟏𝟎, 𝐠𝐢𝐭 𝐫𝐞𝐦𝐨𝐭𝐞
+Repository được các bạn khởi tạo với câu lệnh git init chỉ đang tồn tại trên máy local của các bạn. Nếu muốn lưu trữ repository này lên một dich vụ lưu trữ git từ xa nào đó chẳng hạn như gitlab, github thì các bạn cần phải sử dụng git remote để kết nối giữa chúng.
+$ git remote add <shortname> <url>
+> Ví dụ 
+$ git remote add origin 
+- 𝟏𝟏, 𝐠𝐢𝐭 𝐩𝐮𝐬𝐡
+Khi đã kết nối giữa local và dịch vụ lưu trữ git, chúng ta cần sử dụng lệnh git push để đồng bộ những thay đổi được commit trên local lên dich vụ lưu trữ.
+$ git push -u <short_name> <your_branch_name>
+> Ví dụ
+$ git push -u origin feature_branch
+Ngoài ra trước khi sử dụng git push các bạn nên cấu hình origin và upstream.
+$ git push --set-upstream <short_name> <branch_name>
+> Ví dụ
+$ git push --set-upstream origin feature_branch
+- 𝟏𝟐, 𝐠𝐢𝐭 𝐟𝐞𝐭𝐜𝐡
+Git được sử dụng để làm việc nhóm, quản lý mã nguồn. Ngoài những commit của bạn thì còn vô số commit khác của các thành viên khác trong team. Sử dụng git fetch sẽ giúp chúng ta cập nhật tất cả những thông tin mới như commit, branch, v.v.
+$ git fetch
+- 𝟏𝟑, 𝐠𝐢𝐭 𝐩𝐮𝐥𝐥
+Câu lệnh này sẽ download tất cả những nội dung (không chỉ là metadata như git fetch) từ dịch vụ lưu trữ xuống local repository.
+$ git pull <remote_url>
+-  𝟏𝟒, 𝐠𝐢𝐭 𝐬𝐭𝐚𝐬𝐡
+Git stash cho phép chúng ta lưu trữ các file được chỉnh sửa trong vùng nhớ tạm.
+$ git stash
+- Nếu muốn xem tất cả các stash các bạn có thể sử dụng lệnh:
+$ git stash list
+- Nếu bạn muốn áp dụng các chỉnh sửa trong một stash nào đó lên branch hiện tại đang sử dụng.
+$ git stash apply
+or
+$ git stash pop
 <a name="When"></a>
 ## III.𝐌Ứ𝐂 ĐỘ 𝐍Â𝐍𝐆 𝐂𝐀𝐎
 
