@@ -44,6 +44,8 @@ $ git branch -d <branch_name>
 git checkout <branch_name>
 Ngoài ra các bạn có thể vừa chuyển qua một branch mới và tiện thể khởi tạo nếu chưa tồn tại với câu lệnh.
 $ git checkout -b <your_new_branch_name>
+Bên cạnh đó còn có thể reset về những thay đổi ban đầu 
+$ git checkout -f
 <a name="How"></a>
 ## II.𝐌Ứ𝐂 ĐỘ 𝐓𝐑𝐔𝐍𝐆 𝐁Ì𝐍𝐇
 - Sau các lệnh GIT cơ bản thường xuyên được sử dụng, chúng ta sẽ tìm hiểu các lệnh ở mức độ trung bình, cường độ sử dụng ích hơn.
