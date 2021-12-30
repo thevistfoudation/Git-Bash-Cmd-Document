@@ -80,4 +80,55 @@ or
 $ git stash pop
 <a name="When"></a>
 ## III.𝐌Ứ𝐂 ĐỘ 𝐍Â𝐍𝐆 𝐂𝐀𝐎
-
+Những câu lệnh ở mức độ nâng cao thường ít được sử dụng, và yêu cầu các bạn phải có kiến thức đủ tốt về git trước khi sử dụng. Hãy sử dụng chúng thật cẩn thận nhé.
+- 𝟐𝟎, 𝐠𝐢𝐭 𝐫𝐞𝐛𝐚𝐬𝐞
+Git rebase tương tự như git merge, nó sẽ kết hợp 1 branch vào branch hiện tại với một ngoại lệ, git rebase sẽ ghi lại tất cả các lịch sử commit.
+Bạn nên sử dụng lệnh Git rebase khi bạn có nhiều branch riêng dùng để hợp nhất thành một branch duy nhất. Và nó sẽ làm cho lịch sử commit trở nên tuyến tính và dễ truy vết hơn.
+$ git rebase <base>
+- 𝟐𝟏, 𝐠𝐢𝐭 𝐛𝐢𝐬𝐞𝐜𝐭
+Git bitsect giúp bạn tìm ra những bad commit.
+> Để bắt đầu sử dụng $ git bisect start
+> Cho git bisect biết về một commit tốt $ git bisect good a123
+> Cho git bisect biết về một commit xấu $ git bisect bad z123
+> 𝟐𝟐, 𝐠𝐢𝐭 𝐜𝐡𝐞𝐫𝐫𝐲-𝐩𝐢𝐜𝐤
+Git cherry-pick là một lệnh hữu ích. Đó là một lệnh cho phép bạn chọn bất kỳ commit nào từ một branch bất kỳ và áp dụng nó vào một branch hiện tại.
+$ git cherry-pick <commit-hash>
+- 𝟐𝟑, 𝐠𝐢𝐭 𝐚𝐫𝐜𝐡𝐢𝐯𝐞
+Lệnh Git archive sẽ kết hợp nhiều tệp thành một tệp duy nhất. Nó giống như một tiện ích zip, vì vậy nó có nghĩa là bạn có thể giải nén các tệp lưu trữ để lấy các tệp riêng lẻ.
+$ git archive --format zip HEAD > archive-HEAD.zip
+- 𝟐𝟒, 𝐠𝐢𝐭 𝐩𝐮𝐥𝐥 –𝐫𝐞𝐛𝐚𝐬𝐞
+Nếu bạn muốn download content từ dịch vụ lưu trữ và dùng rebase thay vì merge thì có thể sử dụng
+$ git pull --rebase
+- 𝟐𝟓, 𝐠𝐢𝐭 𝐛𝐥𝐚𝐦𝐞
+Nếu bạn cần kiểm tra nội dung của bất kỳ tệp nào, bạn cần sử dụng git blame. Nó giúp bạn xác định ai đã thực hiện các thay đổi đối với tệp.
+$ git blame <your_file_name
+- 𝟐𝟔, 𝐠𝐢𝐭 𝐭𝐚𝐠
+Trong Git, các thẻ tag rất hữu ích và bạn có thể sử dụng chúng để quản lý bản phát hành. Bạn có thể coi thẻ Git giống như một nhánh sẽ không thay đổi. Nó quan trọng hơn đáng kể nếu bạn đang phát hành công khai.
+$ git tag -a v1.0.0
+- 𝟐𝟕, 𝐠𝐢𝐭 𝐯𝐞𝐫𝐢𝐟𝐲-𝐜𝐨𝐦𝐦𝐢𝐭
+Lệnh git verify-commit sẽ kiểm tra chữ ký gpg. GPG hoặc “GNU Privacy Guard” là công cụ được sử dụng trong các tệp ký tên và chứa các chữ ký của chúng.
+$ git verify-commit <commit>
+- 𝟐𝟖, 𝐠𝐢𝐭 𝐯𝐞𝐫𝐢𝐟𝐲-𝐭𝐚𝐠
+Tương tự git verify commit, các bạn có thể kiểm tra trên tag với lệnh
+$ git verify-tag <tag>
+- 𝟐𝟗, 𝐠𝐢𝐭 𝐝𝐢𝐟𝐟
+Nếu các bạn muốn so sánh một file code nào thay đổi những gì trước khi commit thì các bạn có thể sử dụng
+$ git diff HEAD <filename>
+Để kiểm tra sự khác nhau giữa mã nguồn hiện tại đã được thay đổi so với local repo
+$ git diff HEAD <filename>
+So sánh 2 branch
+- 𝟑𝟎, 𝐠𝐢𝐭 𝐜𝐢𝐭𝐨𝐨𝐥
+Git citool là một giải pháp thay thế đồ họa của Git commit.
+$ git citool
+- 𝟑𝟏, 𝐠𝐢𝐭 𝐦𝐯
+Đổi tên git file từ tên cũ sang tên mới.s
+$ git mv <old-file-name> <new-file-name>
+- 𝟑𝟐, 𝐠𝐢𝐭 𝐜𝐥𝐞𝐚𝐧
+Bạn có thể xoá sạch các nội dung được thay đổi với các untracked files (chưa được theo dõi) với lệnh git clean.
+$ git clean
+- 𝟑𝟑, 𝐠𝐢𝐭 𝐡𝐞𝐥𝐩
+Giúp bạn xem tất cả các thông tin cần thiết để sử dụng git.
+$ git help <git_command>
+- 𝟑𝟒, 𝐠𝐢𝐭 𝐰𝐡𝐚𝐭𝐜𝐡𝐚𝐧𝐠𝐞𝐝
+Lệnh này thực hiện tương tự như git log nhưng ở dạng thô. Và đó là do nguyên nhân lịch sử.
+$ git whatchanged
